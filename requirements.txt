@@ -1,0 +1,8 @@
+# Núcleo do Robot Framework
+robotframework
+
+# Biblioteca de automação Web (Selenium)
+robotframework-seleniumlibrary
+
+# Biblioteca para geração de dados falsos (Faker)
+robotframework-faker

@@ -1,0 +1,11 @@
+# Ignorar pastas específicas
+.idea/
+.venv/
+browser/
+
+# ARQUIVOS DO ROBOT FRAMEWORK / SELENIUM
+logs/
+log.html
+output.xml
+report.html
+selenium-screenshot-*.png
