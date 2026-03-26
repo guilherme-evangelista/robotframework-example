@@ -20,5 +20,12 @@ CT-02 - Interação com o botão Duplo Clique
     Quando clico no botão duplo clique
     Entao valido que o botão duplo clique possui um clique
 
+CT-03 - Interação com o campo de texto
+    [Tags]  CT-03     qa.front    guilherme.evangelista
+    Dado que estou na tela incicial QA Playground
+    Quando escrevo no campo de texto        teste
+    Entao valido que o campo de texto possui digitado    teste
+
+
 
 
