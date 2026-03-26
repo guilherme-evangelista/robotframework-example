@@ -2,6 +2,27 @@
 
 Este repositório contém um projeto de automação de testes E2E (End-to-End) voltado para aplicações Web. O framework foi estruturado utilizando **Robot Framework** com a **SeleniumLibrary**, aplicando as melhores práticas de mercado como **BDD (Behavior Driven Development)**, **Page Objects** e abstração de comandos em **Custom Keywords**.
 
+## 📊 Relatório de Testes (Living Documentation)
+
+O projeto possui uma esteira contínua que gera e hospeda o relatório de execução automaticamente após cada atualização no código. 
+
+Você pode visualizar o status atual dos testes e os logs detalhados (com screenshots em caso de falha) clicando no link abaixo:
+
+👉 **[Acessar Relatório de Execução (Report.html)](https://guilherme-evangelista.github.io/RobotFrameworkExample/report.html)**
+
+---
+
+## ⚙️ CI/CD (Integração e Entrega Contínuas)
+
+Este projeto utiliza o **GitHub Actions** para garantir a qualidade contínua. A esteira (`robot-ci.yml`) está configurada para rodar automaticamente a cada `push` ou `pull_request` nas branchs principais.
+
+**O fluxo automatizado realiza as seguintes etapas:**
+1. **Setup de Ambiente:** Prepara uma máquina virtual Ubuntu e instala o Python 3.10.
+2. **Dependências:** Instala o Robot Framework e bibliotecas via `requirements.txt`.
+3. **Display Virtual:** Configura o `Xvfb` (X Virtual Framebuffer) para simular uma interface gráfica, permitindo que o Chrome rode perfeitamente no servidor Linux sem precisar do modo *headless*.
+4. **Execução:** Roda todos os cenários de teste mapeados na pasta `features`.
+5. **Artefatos:** Salva os logs de execução e screenshots na nuvem do GitHub (disponíveis para download por 7 dias).
+6. **Deploy no Pages:** Publica os arquivos `report.html` e `log.html` gerados na branch `gh-pages`, atualizando o link do relatório público.
 ## 🛠️ Tecnologias e Bibliotecas Utilizadas
 
 * [Python 3](https://www.python.org/) - Linguagem base.
