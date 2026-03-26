@@ -7,9 +7,16 @@ Resource        ../resources/base.robot
 # GERENCIAMENTO DO NAVEGADOR
 # ==========================================
 Abrir Sessao
-    [Documentation]    Abre o navegador na URL e maximiza a tela.
-    Open Browser       ${URL}    ${BROWSER}
-    Maximize Browser Window
+    [Documentation]    Abre o navegador na URL com opções otimizadas para CI/CD.
+
+    ${options}         Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
+
+    Call Method        ${options}  add_argument    --no-sandbox
+    Call Method        ${options}  add_argument    --disable-dev-shm-usage
+    Call Method        ${options}  add_argument    --disable-gpu
+    Call Method        ${options}  add_argument    --window-size=1920,1080
+
+    Open Browser       ${URL}    ${BROWSER}    options=${options}
 
 Fechar Sessao
     [Documentation]    Tira uma evidência e fecha o navegador ao final do teste.
