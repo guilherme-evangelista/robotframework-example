@@ -1,0 +1,27 @@
+*** Settings ***
+Resource    ../../resources/base.robot
+
+*** Variables ***
+${BTN_ELEMENTOS_BASICOS}          //button[.//span[text()='Elementos Básicos']]
+${BTN_FORMULARIOS_SIMPLES}        //button[.//span[text()='Formulários Simples']]
+${BTN_NAVEGACAO_E_LINKS}          //button[.//span[text()='Navegação e Links']]
+${BTN_ALERTAS_E_MODAIS}           //button[.//span[text()='Alertas e Modais']]
+${BTN_CHECKBOXES_RADIOS}          //button[.//span[text()='Checkboxes & Radios']]
+${BTN_WAITS_SINCRONIZACAO}        //button[.//span[text()='Waits e Sincronização']]
+${BTN_TABELAS_DINAMICAS}          //button[.//span[text()='Tabelas Dinâmicas']]
+${BTN_UPLOAD_ARQUIVOS}            //button[.//span[text()='Upload de Arquivos']]
+${BTN_DROPDOWNS_SELECTS}          //button[.//span[text()='Dropdowns e Selects']]
+${BTN_FORMULARIOS_COMPLEXOS}      //button[.//span[text()='Formulários Complexos']]
+${BTN_DATE_TIME_PICKERS}          //button[.//span[text()='Date & Time Pickers']]
+${BTN_DRAG_DROP_AVANCADO}         //button[.//span[text()='Drag & Drop Avançado']]
+${BTN_IFRAMES_SHADOW_DOM}         //button[.//span[text()='Iframes & Shadow DOM']]
+${BTN_TESTES_API_REST}            //button[.//span[text()='Testes de API REST']]
+${BTN_AUTENTICACAO_SESSOES}       //button[.//span[text()='Autenticação & Sessões']]
+${BTN_FLUXO_PAGAMENTOS}           //button[.//span[text()='Fluxo de Pagamentos']]
+${BTN_MULTI_WINDOW_TABS}          //button[.//span[text()='Multi-Window & Tabs']]
+${BTN_CONTEUDO_DINAMICO}          //button[.//span[text()='Conteúdo Dinâmico']]
+${BTN_FLUXO_E2E_COMPLETO}         //button[.//span[text()='Fluxo E2E Completo']]
+${BTN_PERFORMANCE_STRESS}         //button[.//span[text()='Performance & Stress']]
+${BTN_ACESSIBILIDADE_A11Y}        //button[.//span[text()='Acessibilidade (a11y)']]
+${BTN_INTERNACIONALIZACAO_I18N}   //button[.//span[text()='Internacionalização (i18n)']]
+${BTN_GRAPHQL_WEBSOCKETS}         //button[.//span[text()='GraphQL & WebSockets']]

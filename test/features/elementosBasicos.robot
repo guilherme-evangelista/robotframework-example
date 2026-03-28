@@ -26,6 +26,22 @@ CT-03 - Interação com o campo de texto
     Quando escrevo no campo de texto        teste
     Entao valido que o campo de texto possui digitado    teste
 
+CT-04 - Interação com o dropdown customizado
+    [Tags]  CT-04    qa.front    guilherme.evangelista
+    Dado que estou na tela incicial QA Playground
+    Quando seleciono a opcao no dropdown de framework    robot
+    Entao valido que o dropdown de framework exibe a opcao    Robot Framework
 
+CT-05 - Interação com o slider de intervalo
+    [Tags]  CT-05    qa.front    guilherme.evangelista
+    Dado que estou na tela incicial QA Playground
+    Quando altero o valor do slider para    80
+    Entao valido que o slider possui o valor    80
+
+CT-06 - Interação com o interruptor (switch)
+    [Tags]  CT-06    qa.front    guilherme.evangelista
+    Dado que estou na tela incicial QA Playground
+    Quando clico no interruptor
+    Entao valido que o interruptor esta ativado
 
 
