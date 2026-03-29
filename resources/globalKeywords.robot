@@ -7,8 +7,13 @@ Resource        ../resources/base.robot
 # GERENCIAMENTO DO NAVEGADOR
 # ==========================================
 Abrir Sessao
-    Open Browser    ${URL}    ${BROWSER}
-    Maximize Browser Window
+    IF    '${BROWSER}' == 'headlesschrome'
+        ${options}=    Set Variable    add_argument("--headless");add_argument("--no-sandbox");add_argument("--disable-dev-shm-usage");add_argument("--disable-gpu");add_argument("--window-size=1920,1080")
+        Open Browser    ${URL}    chrome    options=${options}
+    ELSE
+        Open Browser    ${URL}    ${BROWSER}
+        Maximize Browser Window
+    END
 
 Fechar Sessao
     [Documentation]    Tira uma evidência e fecha o navegador ao final do teste.
