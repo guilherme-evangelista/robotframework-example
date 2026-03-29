@@ -38,11 +38,10 @@ jobs:
           mkdir -p allure-results
           mkdir -p logs
 
-      - name: 🤖 Executar Testes (Robot Framework)
+      - name: 🤖 Executar Testes em Paralelo
         continue-on-error: true
         run: |
-          xvfb-run --auto-servernum --server-args="-screen 0 1920x1080x24" \
-          robot -d ./logs --listener allure_robotframework:./allure-results test/features/
+          xvfb-run pabot --processes 4 -d ./logs --listener allure_robotframework:./allure-results --variable BROWSER:headlesschrome test/features/
 
       - name: 📊 Gerar Allure Report
         uses: simple-elf/allure-report-action@master
