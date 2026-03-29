@@ -1,11 +1,4 @@
-# Núcleo do Robot Framework
-robotframework
-
-# Biblioteca de automação Web (Selenium)
-robotframework-seleniumlibrary
-
-# Biblioteca para geração de dados falsos (Faker)
-robotframework-faker
-
-# Biblioteca para geração de relatório
-allure-robotframework
+robotframework==7.0
+robotframework-seleniumlibrary==6.2.0
+allure-robotframework==2.13.5
+robotframework-faker==5.0.0
