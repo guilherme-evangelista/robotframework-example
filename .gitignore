@@ -3,8 +3,9 @@
 .venv/
 browser/
 
-# ARQUIVOS DO ROBOT FRAMEWORK / SELENIUM
+# ARQUIVOS DO ROBOT FRAMEWORK / SELENIUM / REPORTS
 allure-results/
+.pabotsuitenames
 logs/
 log.html
 output.xml

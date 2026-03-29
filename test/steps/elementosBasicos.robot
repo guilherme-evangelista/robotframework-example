@@ -18,20 +18,16 @@ Quando escrevo no campo de texto
 
 Quando seleciono a opcao no dropdown de framework
     [Arguments]    ${NOME_FRAMEWORK}
-    Click Element    ${DROPDOWN_FRAMEWORK}
-    # Monta o locator dinâmico e clica (ex: playwright, cypress)
+    Clicar No Elemento    ${DROPDOWN_FRAMEWORK}
     ${locator_opcao}=    Set Variable    //button[@data-testid='select-option-${NOME_FRAMEWORK}']
-    Wait Until Element Is Visible    ${locator_opcao}
-    Click Element                    ${locator_opcao}
+    Clicar No Elemento                    ${locator_opcao}
 
 Quando altero o valor do slider para
     [Arguments]    ${VALOR}
-    # Executa o JS para atualizar o input range e disparar o evento de mudança na tela
-    Execute Javascript    document.querySelector("input[data-testid='range-input']").value = ${VALOR};
-    Execute Javascript    document.querySelector("input[data-testid='range-input']").dispatchEvent(new Event('input', { bubbles: true }));
+    Arrastar Slider para valor     ${SLIDER_INTERVALO}    ${VALOR}
 
 Quando clico no interruptor
-    Click Element    ${SWITCH_INTERRUPTOR}
+    Clicar No Elemento    ${SWITCH_INTERRUPTOR}
 
 Entao valido que o botão clique aqui possui um clique
     Validar Texto No Elemento    ${BTN_CLIQUE_AQUI}    1
@@ -46,17 +42,14 @@ Entao valido que o campo de texto possui digitado
 
 Entao valido que o dropdown de framework exibe a opcao
     [Arguments]    ${TEXTO_ESPERADO}
-    # Valida se o texto dentro do botão do dropdown reflete a escolha
     Element Should Contain    ${DROPDOWN_FRAMEWORK}    ${TEXTO_ESPERADO}
 
 Entao valido que o slider possui o valor
     [Arguments]    ${VALOR_ESPERADO}
-    # Captura o atributo 'value' do input e compara
     ${VALOR_ATUAL}=    Get Element Attribute    ${SLIDER_INTERVALO}    value
     Should Be Equal As Strings    ${VALOR_ATUAL}    ${VALOR_ESPERADO}
 
 Entao valido que o interruptor esta ativado
-    # Com base no HTML da imagem anterior, o status fica no 'aria-checked'
     ${STATUS}=    Get Element Attribute    ${SWITCH_INTERRUPTOR}    aria-checked
     Should Be Equal As Strings    ${STATUS}    true
 

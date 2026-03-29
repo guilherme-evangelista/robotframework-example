@@ -73,11 +73,13 @@ Arrastar E Soltar Elemento
     Wait Until Element Is Visible    ${locator_destino}    timeout=${timeout}
     Drag And Drop                    ${locator_origem}     ${locator_destino}
 
-Arrastar Slider Por Offset
-    [Arguments]    ${locator}    ${x_offset}    ${y_offset}=0    ${timeout}=15s
-    [Documentation]    Move um slider com base em coordenadas X (horizontal) e Y (vertical).
-    Wait Until Element Is Visible    ${locator}    timeout=${timeout}
-    Drag And Drop By Offset          ${locator}    ${x_offset}    ${y_offset}
+Arrastar Slider Para Valor
+    [Arguments]    ${locator}    ${valor}
+    [Documentation]    Define o valor de um slider diretamente via JS e dispara o evento de input.
+    Wait Until Element Is Visible    ${locator}    timeout=15s
+    ${elemento}=    Get WebElement    ${locator}
+    # O script abaixo define o valor e avisa o navegador que houve uma mudança
+    Execute Javascript    arguments[0].value = ${valor}; arguments[0].dispatchEvent(new Event('input', { bubbles: true }));    ARGUMENTS    ${elemento}
 
 # ==========================================
 # INTERAÇÕES COM LISTAS (DROPDOWNS / SELECTS)
