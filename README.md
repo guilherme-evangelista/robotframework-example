@@ -18,16 +18,18 @@ Este projeto utiliza o **GitHub Actions** para garantir a qualidade contínua. A
 
 **O fluxo automatizado realiza as seguintes etapas:**
 1. **Setup de Ambiente:** Prepara uma máquina virtual Ubuntu e instala o Python 3.10.
-2. **Dependências:** Instala o Robot Framework e bibliotecas via `requirements.txt`.
-3. **Display Virtual:** Configura o `Xvfb` (X Virtual Framebuffer) para simular uma interface gráfica, permitindo que o Chrome rode perfeitamente no servidor Linux sem precisar do modo *headless*.
-4. **Execução:** Roda todos os cenários de teste mapeados na pasta `features`.
-5. **Artefatos:** Salva os logs de execução e screenshots na nuvem do GitHub (disponíveis para download por 7 dias).
-6. **Deploy no Pages:** Publica os arquivos `report.html` e `log.html` gerados na branch `gh-pages`, atualizando o link do relatório público.
+2. **Dependências:** Instala o Robot Framework e o adaptador `allure-robotframework` via `requirements.txt`.
+3. **Display Virtual:** Configura o `Xvfb` para simular uma interface gráfica, permitindo que o Chrome rode em modo "headed" (com interface) dentro do servidor Linux.
+4. **Execução:** Roda os testes utilizando o *listener* do Allure para coletar evidências.
+5. **Geração de Report:** Os resultados brutos (JSON) são convertidos em um site estático (HTML) via Allure CLI.
+6. **Deploy no Pages:** Publica o dashboard final na branch `gh-pages`, atualizando o link público.
+
 ## 🛠️ Tecnologias e Bibliotecas Utilizadas
 
 * [Python 3](https://www.python.org/) - Linguagem base.
 * [Robot Framework](https://robotframework.org/) - Core do framework de automação.
 * [SeleniumLibrary](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html) - Interação com os elementos Web.
+* [Allure Report](https://docs.qameta.io/allure/) - Framework de relatórios de última geração.
 * [FakerLibrary](https://pypi.org/project/robotframework-faker/) - Geração de massa de dados dinâmicos.
 
 ## 📂 Arquitetura do Projeto

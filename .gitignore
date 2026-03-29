@@ -4,6 +4,7 @@
 browser/
 
 # ARQUIVOS DO ROBOT FRAMEWORK / SELENIUM
+allure-results/
 logs/
 log.html
 output.xml

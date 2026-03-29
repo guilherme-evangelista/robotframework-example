@@ -1,6 +1,7 @@
 *** Settings ***
 ###PAGES
 Resource               ../test/pages/elementosBasicos.robot
+Resource               ../test/pages/navegacaoRapida.robot
 Resource               globalKeywords.robot
 
 ###STEPS
