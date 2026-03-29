@@ -38,10 +38,19 @@ CT-05 - Interação com o slider de intervalo
     Quando altero o valor do slider para    80
     Entao valido que o slider possui o valor    80
 
-CT-06 - Interação com o interruptor (switch)
+CT-06 - Interação com o interruptor (switch) ativado
     [Tags]  CT-06    qa.front    guilherme.evangelista
     Dado que estou na tela incicial QA Playground
     Quando clico no interruptor
     Entao valido que o interruptor esta ativado
+
+CT-07 - Interação com o interruptor (switch) desativado
+    [Tags]  CT-07    qa.front    guilherme.evangelista
+    Dado que estou na tela incicial QA Playground
+    Quando clico no interruptor
+    Quando clico no interruptor
+    Entao valido que o interruptor esta desativado
+
+
 
 
