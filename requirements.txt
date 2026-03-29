@@ -6,3 +6,6 @@ robotframework-seleniumlibrary
 
 # Biblioteca para geração de dados falsos (Faker)
 robotframework-faker
+
+# Biblioteca para geração de relatório
+allure-robotframework

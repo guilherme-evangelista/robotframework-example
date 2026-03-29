@@ -20,8 +20,11 @@ Abrir Sessao
 
 Fechar Sessao
     [Documentation]    Tira uma evidência e fecha o navegador ao final do teste.
-    Capture Page Screenshot
+    Run Keyword If Test Failed    Capturar Screenshot Para Allure
     Close Browser
+
+Capturar Screenshot Para Allure
+    ${screenshot_path}=    Capture Page Screenshot
 
 # ==========================================
 # AÇÕES ABSTRAÍDAS COM WAITS
