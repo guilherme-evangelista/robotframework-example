@@ -8,7 +8,7 @@ O projeto possui uma esteira contínua que gera e hospeda o relatório de execu�
 
 Você pode visualizar o status atual dos testes e os logs detalhados (com screenshots em caso de falha) clicando no link abaixo:
 
-👉 **[Acessar Relatório de Execução (Report.html)](https://guilherme-evangelista.github.io/RobotFrameworkExample/report.html)**
+👉 **[Acessar Relatório de Execução (Report.html)](https://guilherme-evangelista.github.io/RobotFrameworkExample/)**
 
 ---
 
