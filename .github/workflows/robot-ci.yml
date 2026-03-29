@@ -28,44 +28,34 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # --- NOVO: Configurar Allure CLI no Linux ---
-      - name: 📊 Setup Allure
-        uses: simple-elf/allure-report-action@master
-        if: always()
-        with:
-          allure_results: allure-results
-          allure_version: 2.32.0
-
       - name: 🌐 Configurar Chrome e Display Virtual (Xvfb)
         run: |
           sudo apt-get update
           sudo apt-get install -y xvfb
 
+      - name: 📁 Criar pastas de resultados
+        run: |
+          mkdir -p allure-results
+          mkdir -p logs
+
       - name: 🤖 Executar Testes (Robot Framework)
         continue-on-error: true
         run: |
-          # Note o uso do listener e o caminho correto :./allure-results
           xvfb-run --auto-servernum --server-args="-screen 0 1920x1080x24" \
           robot -d ./logs --listener allure_robotframework:./allure-results test/features/
 
-      # --- NOVO: Gerar o Report Estático ---
-      - name: 🛠️ Gerar Allure Report
-        run: |
-          # Transforma os JSONs em HTML dentro da pasta 'allure-report'
-          npx allure-commandline generate ./allure-results --clean -o ./allure-report
+      - name: 📊 Gerar Allure Report
+        uses: simple-elf/allure-report-action@master
         if: always()
-
-      - name: 📁 Salvar Artefatos
-        uses: actions/upload-artifact@v4
         with:
-          name: allure-report
-          path: ./allure-report/
-          retention-days: 7
+          allure_results: allure-results
+          allure_history: allure-history
+          keep_histories: 20
 
       - name: 🚀 Publicar no GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         if: always()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./allure-report/  # Alterado de logs para allure-report
+          publish_dir: allure-report
           publish_branch: gh-pages
